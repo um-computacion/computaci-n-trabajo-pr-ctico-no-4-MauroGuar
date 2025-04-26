@@ -1,4 +1,12 @@
+def check_num(num):
+    if num < 0:
+        raise ValueError
+    if isinstance(num, float):
+        raise TypeError
+
+
 def iterative_factorial(num: int) -> int:
+    check_num(num)
     fact_res = 1
     for i in range(1, num + 1):
         fact_res *= i
@@ -6,6 +14,7 @@ def iterative_factorial(num: int) -> int:
 
 
 def recursive_factorial(num: int) -> int:
+    check_num(num)
     if num == 0:
         return 1
     return num * recursive_factorial(num - 1)
