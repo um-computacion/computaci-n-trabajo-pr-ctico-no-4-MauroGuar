@@ -6,11 +6,13 @@ def iterative_factorial(num: int) -> int:
 
 
 def recursive_factorial(num: int) -> int:
-    pass
+    if num == 0:
+        return 1
+    return num * recursive_factorial(num - 1)
 
 
 def main():
-    print(iterative_factorial(0))
+    print(recursive_factorial(0))
 
 
 if __name__ == "__main__":
